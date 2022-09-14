@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using PPShowcase.Data.Entity;
 using PPShowcase.Data.EntityConfigurationMap;
 using PPShowcase.Data.SeedData;
+using PPShowcase.Models;
 
 namespace PPShowcase.Data
 {
@@ -32,5 +33,9 @@ namespace PPShowcase.Data
         public DbSet<Product> Product { get; set; } = default!;
 
         public DbSet<Category> Category { get; set; }
+
+        public DbSet<PPShowcase.Models.ProductDto> ProductDto { get; set; }
+
+        public DbSet<PPShowcase.Models.CategoryDto> CategoryDto { get; set; }
     }
 }

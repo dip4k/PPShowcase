@@ -10,10 +10,10 @@ namespace PPShowcase.MappingProfiles
         public ProductMappingProfile()
         {
             AllowNullCollections = true;
-            CreateMap<Product,ProductDto>()
-                .ForMember(dest=>dest.Category,opt=>opt.Ignore())
-                .ReverseMap()
-                .ForMember(dest=>dest.CategoryId,opt=>opt.MapFrom(src => src.Category.Id));
+            CreateMap<Product, ProductDto>()
+                //.ForMember(dest => dest.Category, opt => opt.Ignore())
+                .ReverseMap();
+                //.ForMember(dest=>dest.CategoryId,opt=>opt.MapFrom(src => src.Category.Id));
             CreateMap<Category,CategoryDto>().ReverseMap();
         }
 
