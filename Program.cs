@@ -1,6 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using PPShowcase.Data;
+using PPShowcase.Data.Repository.impl;
+using PPShowcase.Data.Repository;
 using PPShowcase.Models;
 
 namespace PPShowcase
@@ -15,6 +17,9 @@ namespace PPShowcase
 
             builder.Services.AddAutoMapper(typeof(Program));
             // Add services to the container.
+            builder.Services.AddScoped<IRepositoryWrapper, RepositoryWrapper>();
+
+
             builder.Services.AddControllersWithViews();
 
             var app = builder.Build();
