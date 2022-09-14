@@ -10,9 +10,16 @@ namespace PPShowcase.Data.EntityConfigurationMap
         public void Configure(EntityTypeBuilder<Category> builder)
         {
             builder.HasKey(x => x.Id);
-            builder.HasIndex(x => x.Name).IsUnique();
-            builder.Property(x => x.Name).IsRequired();
-            builder.HasMany(x => x.Products).WithOne();
+            builder.HasIndex(x => x.Name)
+                .IsUnique();
+            builder.Property(x => x.Name)
+                .IsRequired();
+            builder.HasMany(x => x.Products)
+                .WithOne();
+
+            builder.Property(p => p.RowVersion)
+                .IsConcurrencyToken();
+
             builder.Property(x => x.CreationTime)
                 .HasDefaultValueSql("getdate()")
                 .IsRequired();

@@ -17,10 +17,15 @@ namespace PPShowcase.Data.EntityConfigurationMap
                 .IsUnique();
             builder.Property(x => x.Name)
                 .IsRequired();
+
+            builder.Property(p => p.RowVersion)
+                .IsConcurrencyToken();
+
             builder.HasOne(x => x.Category)
                 .WithMany(x => x.Products)
                 .HasForeignKey(x => x.CategoryId)
                 .OnDelete(DeleteBehavior.Cascade);
+
             builder.Property(x => x.CreationTime)
                 .HasDefaultValueSql("getdate()")
                 .IsRequired();
