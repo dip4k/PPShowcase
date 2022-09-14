@@ -13,6 +13,7 @@ namespace PPShowcase
             builder.Services.AddDbContext<PPShowcaseContext>(options =>
                 options.UseSqlServer(builder.Configuration.GetConnectionString("PPShowcaseContext") ?? throw new InvalidOperationException("Connection string 'PPShowcaseContext' not found.")));
 
+            builder.Services.AddAutoMapper(typeof(Program));
             // Add services to the container.
             builder.Services.AddControllersWithViews();
 

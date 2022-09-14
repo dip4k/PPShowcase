@@ -2,7 +2,7 @@
 using Microsoft.Extensions.DependencyInjection;
 
 using PPShowcase.Data;
-
+using PPShowcase.Data.Entity;
 using System;
 using System.Linq;
 
@@ -28,22 +28,22 @@ namespace PPShowcase.Models
                     context.Category.AddRange(new Category[] {
                         new Category() {
                             //CategoryId = 1,
-                            AddedDate = DateTime.Now,Name="laptops",Description="Laptops",LastModificationTime=DateTime.Now
+                            CreationTime = DateTime.Now,Name="laptops",Description="Laptops",LastModificationTime=DateTime.Now
                         },
 
                         new Category() {
                             //CategoryId = 2,
-                            AddedDate = DateTime.Now,Name="smartphones",Description="Smart phones",LastModificationTime=DateTime.Now
+                            CreationTime = DateTime.Now,Name="smartphones",Description="Smart phones",LastModificationTime=DateTime.Now
                         },
 
                         new Category() {
                             //CategoryId = 3,
-                            AddedDate = DateTime.Now,Name="bags",Description="Bags",LastModificationTime=DateTime.Now
+                            CreationTime = DateTime.Now,Name="bags",Description="Bags",LastModificationTime=DateTime.Now
                         },
 
                         new Category() {
                             //CategoryId = 4,
-                            AddedDate = DateTime.Now,Name="skincare",Description="skincare",LastModificationTime=DateTime.Now
+                            CreationTime = DateTime.Now,Name="skincare",Description="skincare",LastModificationTime=DateTime.Now
                         }
                     });
 
@@ -59,7 +59,7 @@ namespace PPShowcase.Models
                         Code = "iphone9",
                         CategoryId = 2,
                         IsActive = true,
-                        AddedDate = DateTime.Now,
+                        CreationTime = DateTime.Now,
                         ManufacturingDate = new DateTime(2018, 10, 25),
                         UnitPrice = 549
                     },
@@ -70,7 +70,7 @@ namespace PPShowcase.Models
                         Code = "iphonex",
                         CategoryId = 2,
                         IsActive = true,
-                        AddedDate = DateTime.Now,
+                        CreationTime = DateTime.Now,
                         ManufacturingDate = new DateTime(2019,10,25),
                         UnitPrice=899
                     },
@@ -81,7 +81,7 @@ namespace PPShowcase.Models
                         Code = "sam9",
                         CategoryId = 2,
                         IsActive = true,
-                        AddedDate = DateTime.Now,
+                        CreationTime = DateTime.Now,
                         ManufacturingDate = new DateTime(2018, 05, 25),
                         UnitPrice = 1249
                     }, new Product
@@ -91,7 +91,7 @@ namespace PPShowcase.Models
                         Code = "oppof19",
                         CategoryId = 2,
                         IsActive = true,
-                        AddedDate = DateTime.Now,
+                        CreationTime = DateTime.Now,
                         ManufacturingDate = new DateTime(2020, 10, 10),
                         UnitPrice = 280
                     }, 
@@ -102,7 +102,7 @@ namespace PPShowcase.Models
                         Code = "huaweip30",
                         CategoryId = 2,
                         IsActive = true,
-                        AddedDate = DateTime.Now,
+                        CreationTime = DateTime.Now,
                         ManufacturingDate = new DateTime(2020, 04, 02),
                         UnitPrice = 499
                     }, 
@@ -113,7 +113,7 @@ namespace PPShowcase.Models
                         Code = "macbookpro",
                         CategoryId = 1,
                         IsActive = true,
-                        AddedDate = DateTime.Now,
+                        CreationTime = DateTime.Now,
                         ManufacturingDate = new DateTime(2019, 10, 25),
                         UnitPrice = 1749
                     }, new Product
@@ -123,7 +123,7 @@ namespace PPShowcase.Models
                         Code = "samsunggalaxybook",
                         CategoryId = 1,
                         IsActive = true,
-                        AddedDate = DateTime.Now,
+                        CreationTime = DateTime.Now,
                         ManufacturingDate = new DateTime(2020, 10, 25),
                         UnitPrice = 1499
                     }, 
@@ -134,7 +134,7 @@ namespace PPShowcase.Models
                         Code = "surface4",
                         CategoryId = 1,
                         IsActive = true,
-                        AddedDate = DateTime.Now,
+                        CreationTime = DateTime.Now,
                         ManufacturingDate = new DateTime(2019, 04, 25),
                         UnitPrice = 1549
                     }

@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PPShowcase.Data;
 
@@ -11,9 +12,10 @@ using PPShowcase.Data;
 namespace PPShowcase.Migrations
 {
     [DbContext(typeof(PPShowcaseContext))]
-    partial class PPShowcaseContextModelSnapshot : ModelSnapshot
+    [Migration("20220914144551_makecreationtime_required")]
+    partial class makecreationtime_required
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

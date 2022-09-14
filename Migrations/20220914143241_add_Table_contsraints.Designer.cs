@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PPShowcase.Data;
 
@@ -11,9 +12,10 @@ using PPShowcase.Data;
 namespace PPShowcase.Migrations
 {
     [DbContext(typeof(PPShowcaseContext))]
-    partial class PPShowcaseContextModelSnapshot : ModelSnapshot
+    [Migration("20220914143241_add_Table_contsraints")]
+    partial class add_Table_contsraints
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -31,9 +33,7 @@ namespace PPShowcase.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<DateTime>("CreationTime")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("datetime2")
-                        .HasDefaultValueSql("getdate()");
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
@@ -56,33 +56,33 @@ namespace PPShowcase.Migrations
                         new
                         {
                             Id = 1,
-                            CreationTime = new DateTime(2022, 9, 14, 20, 15, 51, 106, DateTimeKind.Local).AddTicks(9354),
+                            CreationTime = new DateTime(2022, 9, 14, 20, 2, 41, 344, DateTimeKind.Local).AddTicks(4763),
                             Description = "Laptops",
-                            LastModificationTime = new DateTime(2022, 9, 14, 20, 15, 51, 106, DateTimeKind.Local).AddTicks(9362),
+                            LastModificationTime = new DateTime(2022, 9, 14, 20, 2, 41, 344, DateTimeKind.Local).AddTicks(4771),
                             Name = "laptops"
                         },
                         new
                         {
                             Id = 2,
-                            CreationTime = new DateTime(2022, 9, 14, 20, 15, 51, 106, DateTimeKind.Local).AddTicks(9369),
+                            CreationTime = new DateTime(2022, 9, 14, 20, 2, 41, 344, DateTimeKind.Local).AddTicks(4775),
                             Description = "Smart phones",
-                            LastModificationTime = new DateTime(2022, 9, 14, 20, 15, 51, 106, DateTimeKind.Local).AddTicks(9370),
+                            LastModificationTime = new DateTime(2022, 9, 14, 20, 2, 41, 344, DateTimeKind.Local).AddTicks(4775),
                             Name = "smartphones"
                         },
                         new
                         {
                             Id = 3,
-                            CreationTime = new DateTime(2022, 9, 14, 20, 15, 51, 106, DateTimeKind.Local).AddTicks(9371),
+                            CreationTime = new DateTime(2022, 9, 14, 20, 2, 41, 344, DateTimeKind.Local).AddTicks(4776),
                             Description = "Bags",
-                            LastModificationTime = new DateTime(2022, 9, 14, 20, 15, 51, 106, DateTimeKind.Local).AddTicks(9371),
+                            LastModificationTime = new DateTime(2022, 9, 14, 20, 2, 41, 344, DateTimeKind.Local).AddTicks(4776),
                             Name = "bags"
                         },
                         new
                         {
                             Id = 4,
-                            CreationTime = new DateTime(2022, 9, 14, 20, 15, 51, 106, DateTimeKind.Local).AddTicks(9372),
+                            CreationTime = new DateTime(2022, 9, 14, 20, 2, 41, 344, DateTimeKind.Local).AddTicks(4777),
                             Description = "skincare",
-                            LastModificationTime = new DateTime(2022, 9, 14, 20, 15, 51, 106, DateTimeKind.Local).AddTicks(9373),
+                            LastModificationTime = new DateTime(2022, 9, 14, 20, 2, 41, 344, DateTimeKind.Local).AddTicks(4777),
                             Name = "skincare"
                         });
                 });
@@ -103,9 +103,7 @@ namespace PPShowcase.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<DateTime>("CreationTime")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("datetime2")
-                        .HasDefaultValueSql("getdate()");
+                        .HasColumnType("datetime2");
 
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
@@ -138,7 +136,7 @@ namespace PPShowcase.Migrations
                             Id = 1,
                             CategoryId = 2,
                             Code = "iphone9",
-                            CreationTime = new DateTime(2022, 9, 14, 20, 15, 51, 106, DateTimeKind.Local).AddTicks(9469),
+                            CreationTime = new DateTime(2022, 9, 14, 20, 2, 41, 344, DateTimeKind.Local).AddTicks(4855),
                             IsActive = true,
                             ManufacturingDate = new DateTime(2018, 10, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "iPhone 9",
@@ -149,7 +147,7 @@ namespace PPShowcase.Migrations
                             Id = 2,
                             CategoryId = 2,
                             Code = "iphonex",
-                            CreationTime = new DateTime(2022, 9, 14, 20, 15, 51, 106, DateTimeKind.Local).AddTicks(9473),
+                            CreationTime = new DateTime(2022, 9, 14, 20, 2, 41, 344, DateTimeKind.Local).AddTicks(4860),
                             IsActive = true,
                             ManufacturingDate = new DateTime(2019, 10, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "iPhone X",
@@ -160,7 +158,7 @@ namespace PPShowcase.Migrations
                             Id = 3,
                             CategoryId = 2,
                             Code = "sam9",
-                            CreationTime = new DateTime(2022, 9, 14, 20, 15, 51, 106, DateTimeKind.Local).AddTicks(9475),
+                            CreationTime = new DateTime(2022, 9, 14, 20, 2, 41, 344, DateTimeKind.Local).AddTicks(4861),
                             IsActive = true,
                             ManufacturingDate = new DateTime(2018, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "Samsung Universe 9",
@@ -171,7 +169,7 @@ namespace PPShowcase.Migrations
                             Id = 4,
                             CategoryId = 2,
                             Code = "oppof19",
-                            CreationTime = new DateTime(2022, 9, 14, 20, 15, 51, 106, DateTimeKind.Local).AddTicks(9476),
+                            CreationTime = new DateTime(2022, 9, 14, 20, 2, 41, 344, DateTimeKind.Local).AddTicks(4862),
                             IsActive = true,
                             ManufacturingDate = new DateTime(2020, 10, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "OPPOF19",
@@ -182,7 +180,7 @@ namespace PPShowcase.Migrations
                             Id = 5,
                             CategoryId = 2,
                             Code = "huaweip30",
-                            CreationTime = new DateTime(2022, 9, 14, 20, 15, 51, 106, DateTimeKind.Local).AddTicks(9478),
+                            CreationTime = new DateTime(2022, 9, 14, 20, 2, 41, 344, DateTimeKind.Local).AddTicks(4864),
                             IsActive = true,
                             ManufacturingDate = new DateTime(2020, 4, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "Huawei P30",
@@ -193,7 +191,7 @@ namespace PPShowcase.Migrations
                             Id = 6,
                             CategoryId = 1,
                             Code = "macbookpro",
-                            CreationTime = new DateTime(2022, 9, 14, 20, 15, 51, 106, DateTimeKind.Local).AddTicks(9479),
+                            CreationTime = new DateTime(2022, 9, 14, 20, 2, 41, 344, DateTimeKind.Local).AddTicks(4865),
                             IsActive = true,
                             ManufacturingDate = new DateTime(2019, 10, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "MacBook Pro",
@@ -204,7 +202,7 @@ namespace PPShowcase.Migrations
                             Id = 7,
                             CategoryId = 1,
                             Code = "samsunggalaxybook",
-                            CreationTime = new DateTime(2022, 9, 14, 20, 15, 51, 106, DateTimeKind.Local).AddTicks(9480),
+                            CreationTime = new DateTime(2022, 9, 14, 20, 2, 41, 344, DateTimeKind.Local).AddTicks(4865),
                             IsActive = true,
                             ManufacturingDate = new DateTime(2020, 10, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "Samsung Galaxy Book",
@@ -215,7 +213,7 @@ namespace PPShowcase.Migrations
                             Id = 8,
                             CategoryId = 1,
                             Code = "surface4",
-                            CreationTime = new DateTime(2022, 9, 14, 20, 15, 51, 106, DateTimeKind.Local).AddTicks(9481),
+                            CreationTime = new DateTime(2022, 9, 14, 20, 2, 41, 344, DateTimeKind.Local).AddTicks(4867),
                             IsActive = true,
                             ManufacturingDate = new DateTime(2019, 4, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "Microsoft Surface Laptop 4",

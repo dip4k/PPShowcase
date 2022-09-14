@@ -1,10 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace PPShowcase.Models
+namespace PPShowcase.Data.Entity
 {
-    public class Product
+    public class Product : BaseEntity
     {
-        public int Id { get; set; }
         public string Code { get; set; }
         public string Name { get; set; }
 
@@ -15,9 +14,6 @@ namespace PPShowcase.Models
         public DateTime ManufacturingDate { get; set; }
         public bool IsActive { get; set; }
         [DataType(DataType.Date)]
-        public DateTime AddedDate { get; set; }
-        public DateTime? LastModificationTime { get; set; }
-
         public int CategoryId { get; set; }
         public virtual Category Category { get; set; }
     }
