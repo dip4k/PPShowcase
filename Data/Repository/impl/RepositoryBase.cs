@@ -6,7 +6,7 @@ namespace PPShowcase.Data.Repository.impl
 {
     public abstract class RepositoryBase<T> : IRepositoryBase<T> where T : class
     {
-        private readonly PPShowcaseContext _showcaseContext;
+        protected PPShowcaseContext _showcaseContext;
 
         public RepositoryBase(PPShowcaseContext showcaseContext)
         {

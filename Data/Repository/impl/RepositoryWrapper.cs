@@ -2,7 +2,7 @@
 {
     public class RepositoryWrapper : IRepositoryWrapper
     {
-        private PPShowcaseContext _repoContext;
+        private readonly PPShowcaseContext _showcaseContext;
         private ICategoryRepository _category;
         private IProductRepository _product;
         public ICategoryRepository Category
@@ -11,7 +11,7 @@
             {
                 if (_category == null)
                 {
-                    _category = new CategoryRepository(_repoContext);
+                    _category = new CategoryRepository(_showcaseContext);
                 }
                 return _category;
             }
@@ -22,18 +22,18 @@
             {
                 if (_product == null)
                 {
-                    _product = new ProductRepository(_repoContext);
+                    _product = new ProductRepository(_showcaseContext);
                 }
                 return _product;
             }
         }
         public RepositoryWrapper(PPShowcaseContext repositoryContext)
         {
-            _repoContext = repositoryContext;
+            _showcaseContext = repositoryContext;
         }
         public void Save()
         {
-            _repoContext.SaveChanges();
+            _showcaseContext.SaveChanges();
         }
     }
 }
